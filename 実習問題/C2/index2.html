@@ -11,24 +11,27 @@
   <body>
     <h2>いろいろな型のデータを表示する演習</h2>
     <div id="app">
-      <ul>
-        主要都市情報
-        <li>
-          都市名：{{ city1 }}<br />
-          人口：{{ population1 }}万人<br />
-          政令指定都市：{{ govermentCity1 }}
-        </li>
-        <li>
-          都市名：{{ city2 }}<br />
-          人口：{{ population2 }}万人<br />
-          政令指定都市：{{ govermentCity2 }}
-        </li>
-        <li>
-          都市名：{{ city3 }}<br />
-          人口：{{ population3 }}万人<br />
-          政令指定都市：{{ govermentCity3 }}
-        </li>
-      </ul>
+      <table border="1">
+        <caption>主要都市情報</caption>
+        <tr>
+          <th>都市名</th><th>人口</th><th>政令指定都市</th>
+        </tr>
+        <tr>
+          <td>{{ city1 }}</td>
+          <td>{{ population1 }}万人</td>
+          <td>{{ govermentCity1 }}</td>
+        </tr>
+        <tr>
+          <td>{{ city2 }}</td>
+          <td>{{ population2 }}万人</td>
+          <td>{{ govermentCity2 }}</td>
+        </tr>
+        <tr>
+          <td>{{ city3 }}</td>
+          <td>{{ population3 }}万人</td>
+          <td>{{ govermentCity3 }}</td>
+        </tr>
+      </table>
     </div>
 
     <script>
@@ -47,8 +50,8 @@
           city3: "盛岡市",
           population3: 29.76,
           govermentCity3: false,
-        },
-      });
+        }
+      })
     </script>
   </body>
 </html>
