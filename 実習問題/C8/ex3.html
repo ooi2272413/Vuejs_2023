@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Vue.js 演習問題</title>
+        <link href="main.css" rel="stylesheet">
+        <script src
+        ="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js">
+        </script>
+    </head>
+    <body>
+        <div id="app">
+        <h2>消費税込み価格計算</h2>
+        <input v-model.number="price" type="number">円×
+        <input v-model.number="kosuu" type="number">個<br>
+        消費税率：<input v-model.number="tax" type="number">%
+        <p>消費税込み価格は{{taxIncluded}}円です。</p>
+        </div>
+
+        <script>
+        new Vue({
+            el: '#app',
+            data:{
+                price:1300,
+                kosuu:8,
+                tax:8
+            },
+            computed:{
+                taxIncluded:function(){
+                    return Math.floor(this.price*this.kosuu*(1+this.tax/100));
+                }
+            }
+
+        })
+        </script>
+    </body>
+</html>
